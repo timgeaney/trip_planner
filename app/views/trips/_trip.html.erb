@@ -1,4 +1,6 @@
 <li>
-	<%= link_to (image_tag trip.picture.url(:medium)), trip %>
+	<p><%= link_to (image_tag trip.picture.url(:medium)), trip %>
 	<%= trip.description %>
+	<%= image_tag trip.user.avatar.url(:mini) %>
+	<%= trip.user.username %></p>
 </li>
