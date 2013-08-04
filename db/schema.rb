@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130804170046) do
+ActiveRecord::Schema.define(:version => 20130804181127) do
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -23,6 +23,23 @@ ActiveRecord::Schema.define(:version => 20130804170046) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "trips", :force => true do |t|
+    t.string   "title"
+    t.datetime "startdate"
+    t.datetime "enddate"
+    t.string   "destination"
+    t.string   "purpose"
+    t.integer  "user_id"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+  end
+
+  add_index "trips", ["user_id", "created_at"], :name => "index_trips_on_user_id_and_created_at"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
