@@ -11,6 +11,7 @@ end
 
 gem 'jquery-rails'
 gem 'bootstrap-sass'
+gem 'omniauth-twitter'
 gem 'cancan'
 gem 'devise'
 gem 'figaro'
