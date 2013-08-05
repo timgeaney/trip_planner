@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @users = User.all
+    @trips = current_user.trips.paginate(page: params[:page])
   end
 end

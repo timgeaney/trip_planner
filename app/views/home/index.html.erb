@@ -1,4 +1,7 @@
 <h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
+<%= link_to "Add A Trip", new_trip_path, :class => "btn btn-info" %>
+<% @trips.each do |trip| %>
+  <p>Trip: <%=link_to trip.description, trip %></p>
+
+
 <% end %>

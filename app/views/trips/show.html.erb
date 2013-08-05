@@ -1,3 +1,6 @@
+
+<%= link_to (image_tag @trip.picture.url(:medium)), trip_path %>
+
 <%= link_to @trip.user do %>
 	<%= @trip.user.firstname %>
 <% end %>
