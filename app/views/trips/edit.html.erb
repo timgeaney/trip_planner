@@ -1,4 +1,4 @@
-<h2>Add a new Trip</h2>
+<h2>Edit a new Trip</h2>
 <div class="row">
   <div class="span6 offset3">
 	<%= form_for @trip, html: { multipart: true, class: 'standard' } do |f| %>
@@ -6,7 +6,7 @@
 	  <%= render :partial => 'form', locals: { f: f } %>
 
 	  <div>
-	    <%= f.submit "Submit your trip" %>
+	    <%= f.submit "Edit your trip" %>
 	  </div>
 	<% end %>
 	<div>

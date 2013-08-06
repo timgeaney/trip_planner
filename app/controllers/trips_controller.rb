@@ -1,6 +1,10 @@
 class TripsController < ApplicationController
 
+  before_filter :authenticate_user!
+
   def index
+    #@user = User.find(params[:id])
+    #@trips = @user.trips.paginate(page: params[:page])
     @trips = current_user.trips.paginate(page: params[:page])
   end
 
@@ -24,5 +28,19 @@ class TripsController < ApplicationController
 
   def destroy
     
+  end
+
+  def edit
+    @trip = Trip.find(params[:id])  
+  end
+
+  def update
+    @trip = Trip.find(params[:id])
+    if @trip.update_attributes(params[:trip])
+      flash[:sucess] = "Profile Updated"
+      redirect_to @trip
+    else
+      render 'edit'
+    end
   end
 end

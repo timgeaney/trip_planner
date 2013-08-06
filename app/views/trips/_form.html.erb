@@ -1,0 +1,33 @@
+<div>
+  <%= f.label :picture, "Upload your Picture"%>
+  <%= f.file_field :picture %></br>
+  Current Trip Pic: <%= image_tag @trip.picture.url(:thumb)%>
+</div>
+
+<div>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+</div>
+
+
+<div>
+  <%= f.label :description %>
+  <%= f.text_area :description, :size => "10x10", placeholder: "Add a description here....."%>
+</div>
+
+<div>
+  <%= f.label :startdate %>
+  <%= f.text_field :startdate %>
+</div>
+
+<div>
+  <%= f.label :enddate %>
+  <%= f.text_field :enddate %>
+</div>
+
+<div class="options">
+<%= f.radio_button :purpose, 'business' %>
+<%= f.label :pupose, 'business' %>
+<%= f.radio_button :purpose, 'pleasure' %>
+<%= f.label :purpose, 'pleasure' %>
+</div>

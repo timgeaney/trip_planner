@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @trips = @user.trips.paginate(page: params[:page])
   end
   
   def update

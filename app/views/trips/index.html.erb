@@ -1,8 +1,11 @@
 <% provide(:title, 'All Trips') %>
 
-<div id="trips">
-	
-	<%= render @trips %>
-</div>
+
+<% if current_user.trips.any? %>
+
+	<div id="trips">
+		<%= render @trips %>
+	</div>
+<% end %>
 
 <%= will_paginate %>

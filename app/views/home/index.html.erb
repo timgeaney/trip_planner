@@ -1,7 +1,9 @@
 <h3>Home</h3>
-<%= link_to "Add A Trip", new_trip_path, :class => "btn btn-info" %>
-<% @trips.each do |trip| %>
-  <p>Trip: <%=link_to trip.description, trip %></p>
 
 
-<% end %>
+  <% if user_signed_in?%>
+  <%= link_to "Add A Trip", new_trip_path, :class => "btn btn-info" %>
+
+  <% end %>
+
+

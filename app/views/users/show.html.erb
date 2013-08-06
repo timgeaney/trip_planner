@@ -1,3 +1,9 @@
-<h3>User</h3>
-<p>User: <%= @user.name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
+
+
+
+<p>Test for user: <%= @user.id %></p>
+
+<% if @user.trips.any? %>
+  <%= render @trips %>
+  
+<% end %>
