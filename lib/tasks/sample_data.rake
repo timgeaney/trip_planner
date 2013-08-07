@@ -1,4 +1,3 @@
-
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
@@ -18,7 +17,7 @@ def make_users
                  password: "foobar2013",
                  password_confirmation: "foobar2013")
 
-  admin.toggle!(:admin)
+  admin.has_role(:admin)
 
   30.times do |n|
       first_name  = Faker::Name.first_name

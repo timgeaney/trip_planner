@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
           :omniauthable
 
   attr_accessible :role_ids, :as => :admin       
+  
   attr_accessible :avatar, 
                   :firstname,
                   :lastname, 

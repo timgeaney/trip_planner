@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>User_Id</th>
+      <th>Avatar</th>
       <th>Username</th>
       <th>Email</th>
       <th>Registered</th>
@@ -16,6 +17,7 @@
   <% @users.each do |user| %>
     <tr>
       <td><%= user.id %></td>
+      <td><%= image_tag user.avatar.url(:mini) %></td>
       <td><%= link_to user.username, user %></td>
       <td><%= user.email %></td>
       <td><%= user.created_at.to_date %></td>

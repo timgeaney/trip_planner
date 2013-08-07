@@ -2,7 +2,7 @@ TripPlanner::Application.routes.draw do
   get "trips/new"
 
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'trips#index'
   end
   root :to => "home#index"
   devise_for :users

@@ -3,7 +3,7 @@ class TripsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    #@user = User.find(params[:id])
+    #@user = User.find(params[:user])
     #@trips = @user.trips.paginate(page: params[:page])
     @trips = current_user.trips.paginate(page: params[:page])
   end

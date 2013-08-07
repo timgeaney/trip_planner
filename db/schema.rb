@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130804183305) do
+ActiveRecord::Schema.define(:version => 20130804192053) do
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20130804183305) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.string   "description"
   end
 
   add_index "trips", ["user_id", "created_at"], :name => "index_trips_on_user_id_and_created_at"
